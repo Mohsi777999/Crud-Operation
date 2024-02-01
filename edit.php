@@ -6,14 +6,13 @@
     <form class="post-form" action="updatedata.php" method="post">
 
         <?php
-
         $stu_id = $_GET['id'];
 
         $sql = "SELECT * FROM `student_data` WHERE s_id = $stu_id";
         $result = mysqli_query($conn, $sql);
 
         while ($fetch = mysqli_fetch_array($result)) {
-            ?>
+        ?>
 
             <div class="form-group">
                 <label>Name</label>
@@ -32,24 +31,24 @@
                 <label>Class</label>
                 <select name="sclass">
 
-                <?php
+                    <?php
 
-                $sql2 = "SELECT * FROM `sclass`";
-                $result2 = mysqli_query($conn, $sql2);
+                    $sql2 = "SELECT * FROM `sclass`";
+                    $result2 = mysqli_query($conn, $sql2);
 
-                while ($row = mysqli_fetch_array($result2)) {
+                    while ($row = mysqli_fetch_array($result2)) {
 
-                    if ($fetch['s_class'] == $row['c_id']) {
-            
-                        $select = "selected";
-                    } else {
-                        $select = "";
+                        if ($fetch['s_class'] == $row['c_id']) {
+
+                            $select = "selected";
+                        } else {
+                            $select = "";
+                        }
+
+                        echo "<option {$select} value='{$row['c_id']}'>{$row['c_name']}</option>";
                     }
-            
-                    echo "<option {$select} value='{$row['c_id']}'>{$row['c_name']}</option>";
-                }
-                
-                ?>
+
+                    ?>
                 </select>
             </div>
 

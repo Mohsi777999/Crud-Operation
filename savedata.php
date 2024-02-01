@@ -11,7 +11,7 @@ $sql = "INSERT INTO `student_data`(`s_name`, `s_address`, `s_class`, `s_phone`) 
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
-    header("Location:http://localhost/crud_html/index.php");
+    header("Location:http://localhost/Crud-Operation-main/index.php");
 } else {
     echo "<script>alert('Data not updated')</script>";
 }

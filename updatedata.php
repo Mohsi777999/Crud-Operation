@@ -13,7 +13,7 @@ $sql = "UPDATE `student_data` SET `s_name`='$stu_name',`s_address`='$stu_address
 $result = mysqli_query($conn,$sql);
 
 if ($result) {
-    header("Location:http://localhost/crud_html/index.php");
+    header("Location:http://localhost/Crud-Operation-main/index.php");
 }else{
     echo "<script>alert('Data not updated')</script>";
 }
